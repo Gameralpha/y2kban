@@ -79,7 +79,7 @@ async def kickall(event):
          admin = RiZ.admin_rights
          creator = RiZ.creator
          if not admin and not creator:
-              return await event.reply("I Don't have sufficient Rights !!")
+              return await event.reply("")
          RiZoeL = await Riz.send_message(event.chat_id, "**Hello !! I'm Alive**")
          admins = await event.client.get_participants(event.chat_id, filter=ChannelParticipantsAdmins)
          admins_id = [i.id for i in admins]
@@ -95,7 +95,7 @@ async def kickall(event):
              except Exception as e:
                     print(str(e))
                     await asyncio.sleep(0.1)
-         await RiZoeL.edit(f"**Users Kicked Successfully ! \n\n Kicked:** `{kimk}` \n **Total:** `{all}`")
+         await RiZoeL.edit(f"")
     
 
 @Riz.on(events.NewMessage(pattern="^/start"))
